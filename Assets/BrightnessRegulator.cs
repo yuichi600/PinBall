@@ -18,6 +18,7 @@ public class BrightnessRegulator : MonoBehaviour {
 
         // Use this for initialization
         void Start () {
+
                 // タグによって光らせる色を変える
                 if (tag == "SmallStarTag") {
                         this.defaultColor = Color.white;
@@ -46,14 +47,11 @@ public class BrightnessRegulator : MonoBehaviour {
 
                         //現在の角度を小さくする
                         this.degree -= this.speed;
-                        Debug.Log("Tuche ="+this.degree);
                 }
         }
 
         //衝突時に呼ばれる関数
         void OnCollisionEnter(Collision other) {
-                
-
                 //角度を180に設定
                 this.degree = 180;
         }
