@@ -23,17 +23,17 @@ public class ScoreCalc : MonoBehaviour {
 	}
 	
     void OnCollisionEnter(Collision other) {
-		if (tag == "SmallStarTag") {
+		if (other.gameObject.tag == "SmallStarTag") {
             score+=5;
-    	}else if(tag == "SmallCloudTag") {
+    	}else if(other.gameObject.tag == "SmallCloudTag") {
             score+=10;
-        }else if(tag == "LargeCloudTag") {
+        }else if(other.gameObject.tag == "LargeCloudTag") {
             score+=20;
-        } else if (tag == "LargeStarTag") {
+        } else if (other.gameObject.tag == "LargeStarTag") {
             score+=50;
         }
 		this.scoreText.GetComponent<Text> ().text = "Score = "+score;
 
-        Debug.Log("Score = "+tag);
+        Debug.Log("other = "+other.gameObject.tag+" tag ="+tag);
     }
 }
