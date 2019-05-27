@@ -16,9 +16,13 @@ public class ScoreCalc : MonoBehaviour {
 		this.scoreText = GameObject.Find("ScoreText");
 		
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
+		if (Input.GetMouseButtonUp(0)){
+			Vector3 mousePosition = Input.mousePosition;
+			Debug.Log("LeftClick:"+mousePosition );
+		}
 		
 	}
 	
@@ -33,7 +37,5 @@ public class ScoreCalc : MonoBehaviour {
             score+=50;
         }
 		this.scoreText.GetComponent<Text> ().text = "Score = "+score;
-
-        Debug.Log("other = "+other.gameObject.tag+" tag ="+tag);
     }
 }
